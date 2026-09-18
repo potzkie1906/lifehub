@@ -1,3 +1,4 @@
+// client/src/pages/Subjects.jsx
 import { useState, useEffect } from "react";
 import { getSubjects, createSubject, deleteSubject } from "../services/subjectService";
 
@@ -13,6 +14,7 @@ const Subjects = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadSubjects();
   }, []);
 

@@ -4,6 +4,9 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Subjects from "./pages/Subjects";
+import Assignments from "./pages/Assignments";
+import Tasks from "./pages/Tasks";
+import Expenses from "./pages/Expenses";
 
 function App() {
   return (
@@ -23,6 +26,22 @@ function App() {
           <Subjects />
         </ProtectedRoute>
       } />
+      <Route path="/assignments" element={
+        <ProtectedRoute>
+          <Assignments />
+        </ProtectedRoute>
+      } />
+      <Route path="/tasks" element={
+        <ProtectedRoute>
+          <Tasks />
+        </ProtectedRoute>
+      } />
+      <Route path="/expenses" element={
+        <ProtectedRoute>
+          <Expenses />
+        </ProtectedRoute>
+      } />
+      <Route path="*" element={<Login />} />
       <Route path="/" element={<Login />} />
     </Routes>
   );
