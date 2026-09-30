@@ -1,12 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-require("./config/db"); // Import the database connection
-const authRoutes = require("./routes/authRoutes");
-const subjectRoutes = require("./routes/subjectRoutes");
-const assignmentRoutes = require("./routes/assignmentRoutes");
-const taskRoutes = require("./routes/taskRoutes");
-const expenseRoutes = require("./routes/expenseRoutes");
+require("./src/config/db"); // Import the database connection
+const authRoutes = require("./src/routes/authRoutes");
+const subjectRoutes = require("./src/routes/subjectRoutes");
+const assignmentRoutes = require("./src/routes/assignmentRoutes");
+const taskRoutes = require("./src/routes/taskRoutes");
+const expenseRoutes = require("./src/routes/expenseRoutes");
 
 const app = express();
 
