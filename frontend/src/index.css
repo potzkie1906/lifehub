@@ -1,13 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap');
+/* Plus Jakarta Sans: a clean, slightly rounded font that stays readable at small sizes */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
 
-
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
+  /* A clear outline around links and buttons when you move through the app with the Tab key */
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand;
+  }
 }
 
+@layer components {
+  /* Pad paper: blue ruled lines every 36px, drawn with a repeating gradient.
+     Used for the sheet on the Login and Register pages. */
+  .pad-paper {
+    background-color: #fdfdfb;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      #cfdcf5 35px,
+      #cfdcf5 36px
+    );
+  }
+}
+
+/* If someone turns off animations in their phone or computer settings, respect that */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
